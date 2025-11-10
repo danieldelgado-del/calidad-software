@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aplicativo Web - Calidad de Software</title>
+
+    <!-- Tailwind -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Fuente elegante -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+        html { scroll-behavior: smooth; }
+    </style>
+</head>
+
+<body class="bg-gray-100 text-gray-900">
+
+    <!-- Navbar -->
+    <nav class="fixed top-0 w-full bg-white shadow z-50">
+        <div class="max-w-6xl mx-auto flex justify-between items-center p-4">
+            <h1 class="text-xl font-bold">Calidad de Software</h1>
+            <div class="space-x-6">
+                <a href="#portada" class="hover:text-blue-600">Inicio</a>
+                <a href="#que-es" class="hover:text-blue-600">Concepto</a>
+                <a href="#normas" class="hover:text-blue-600">Normas</a>
+                <a href="#modelos" class="hover:text-blue-600">Modelos</a>
+                <a href="#estandares" class="hover:text-blue-600">Estándares</a>
+                <a href="#codigo" class="hover:text-blue-600">Código</a>
+                <a href="#pruebas" class="hover:text-blue-600">Pruebas</a>
+                <a href="#conclusiones" class="hover:text-blue-600">Conclusiones</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Portada -->
+    <section id="portada" class="min-h-screen flex flex-col justify-center items-center p-10 bg-gradient-to-br from-blue-100 to-blue-300 text-center">
+        <h1 class="text-5xl font-bold mb-4">Aplicativo Web: Calidad de Software</h1>
+
+        <div class="text-lg bg-white p-8 rounded shadow-lg max-w-xl">
+            <p><strong>Autor:</strong> Daniel Delgado</p>
+            <p><strong>Colaboración:</strong> Karol 💙</p>
+            <p><strong>Curso:</strong> Software de Calidad</p>
+            <p><strong>Institución:</strong> [Nombre de tu institución]</p>
+            <p class="mt-4"><strong>Año:</strong> 2025</p>
+        </div>
+    </section>
+
+    <!-- Qué es la Calidad de Software -->
+    <section id="que-es" class="max-w-4xl mx-auto bg-white mt-20 p-10 shadow rounded">
+        <h2 class="text-3xl font-bold mb-4 text-blue-700">¿Qué es la Calidad de Software?</h2>
+        <p>
+            La calidad de software se refiere al grado en que un sistema cumple los requisitos funcionales,
+            necesidades del usuario, estándares técnicos y buenas prácticas de desarrollo. Permite asegurar
+            que el software sea confiable, eficiente, seguro, usable y mantenible.  
+            En entornos educativos y reales, comprender la calidad ayuda a desarrollar proyectos estables,
+            profesionales y con mejores resultados.
+        </p>
+    </section>
+
+    <!-- Normas -->
+    <section id="normas" class="max-w-4xl mx-auto bg-white mt-20 p-10 shadow rounded">
+        <h2 class="text-3xl font-bold mb-4 text-blue-700">Normas de Calidad de Software</h2>
+        <p>Las normas son documentos oficiales que establecen cómo debe evaluarse o construirse el software.</p>
+
+        <ul class="list-disc ml-6 mt-4">
+            <li><strong>ISO/IEC 25010:</strong> Define el modelo de calidad más utilizado a nivel mundial.</li>
+            <li><strong>ISO/IEC 12207:</strong> Establece procesos para el ciclo de vida del software.</li>
+            <li><strong>ISO/IEC 90003:</strong> Guía para aplicar ISO 9001 en desarrollo de software.</li>
+        </ul>
+    </section>
+
+    <!-- Modelos -->
+    <section id="modelos" class="max-w-4xl mx-auto bg-white mt-20 p-10 shadow rounded">
+        <h2 class="text-3xl font-bold mb-4 text-blue-700">Modelos de Calidad</h2>
+        <p>Los modelos permiten evaluar y mejorar la calidad mediante estructuras establecidas.</p>
+
+        <ul class="list-disc ml-6 mt-4">
+            <li><strong>CMMI:</strong> Modelo de madurez de procesos, usado en grandes organizaciones.</li>
+            <li><strong>McCall:</strong> Uno de los primeros modelos de calidad, enfocado en mantenibilidad y corrección.</li>
+            <li><strong>Boehm:</strong> Permite medir características como eficiencia y usabilidad.</li>
+        </ul>
+    </section>
+
+    <!-- Estándares -->
+    <section id="estandares" class="max-w-4xl mx-auto bg-white mt-20 p-10 shadow rounded">
+        <h2 class="text-3xl font-bold mb-4 text-blue-700">Estándares</h2>
+        <p>
+            Los estándares indican lineamientos mínimos para garantizar la calidad del software.
+        </p>
+        <ul class="list-disc ml-6 mt-4">
+            <li><strong>IEEE 829:</strong> Estándar para documentación de pruebas.</li>
+            <li><strong>IEEE 830:</strong> Estándar para especificación de requisitos (SRS).</li>
+            <li><strong>IEEE 1012:</strong> Estándar para verificación y validación.</li>
+        </ul>
+    </section>
+
+    <!-- Código y Programación -->
+    <section id="codigo" class="max-w-4xl mx-auto bg-white mt-20 p-10 shadow rounded">
+        <h2 class="text-3xl font-bold mb-4 text-blue-700">Código y Programación</h2>
+        <p>
+            Para garantizar calidad en el código es necesario aplicar principios como:
+        </p>
+        <ul class="list-disc ml-6 mt-4">
+            <li>Buenas prácticas de programación</li>
+            <li>Comentarios claros</li>
+            <li>Modularidad</li>
+            <li>Uso adecuado de variables y estructuras</li>
+            <li>Aplicación de patrones de diseño</li>
+        </ul>
+
+        <p class="mt-4">
+            Un ejemplo básico de programación limpia:
+        </p>
+
+        <pre class="bg-gray-900 text-white p-4 rounded mt-4 overflow-x-auto">
+function sumar(a, b) {
+    return a + b;
+}
+        </pre>
+    </section>
+
+    <!-- Pruebas y Evaluación -->
+    <section id="pruebas" class="max-w-4xl mx-auto bg-white mt-20 p-10 shadow rounded">
+        <h2 class="text-3xl font-bold mb-4 text-blue-700">Pruebas y Evaluación</h2>
+        <p>
+            Las pruebas verifican que el sistema funcione adecuadamente y no presente errores.
+            Entre las más comunes están:
+        </p>
+
+        <ul class="list-disc ml-6 mt-4">
+            <li>Pruebas unitarias</li>
+            <li>Pruebas funcionales</li>
+            <li>Pruebas de integración</li>
+            <li>Pruebas de rendimiento</li>
+            <li>Pruebas de usabilidad</li>
+        </ul>
+    </section>
+
+    <!-- Conclusiones -->
+    <section id="conclusiones" class="max-w-4xl mx-auto bg-white mt-20 p-10 shadow rounded">
+        <h2 class="text-3xl font-bold mb-4 text-blue-700">Conclusiones</h2>
+        <p>
+            La calidad del software garantiza productos confiables, seguros y eficientes. Aplicar normas,
+            modelos y buenas prácticas permite desarrollar sistemas más profesionales y adecuados para el
+            entorno real y educativo.
+        </p>
+    </section>
+
+    <!-- Recomendaciones -->
+    <section class="max-w-4xl mx-auto bg-white mt-20 p-10 shadow rounded mb-20">
+        <h2 class="text-3xl font-bold mb-4 text-blue-700">Recomendaciones</h2>
+        <ul class="list-disc ml-6">
+            <li>Aplicar siempre normas y modelos de calidad.</li>
+            <li>Implementar pruebas en cada etapa del desarrollo.</li>
+            <li>Revisar y mejorar el código periódicamente.</li>
+            <li>Documentar todo el proceso de desarrollo.</li>
+        </ul>
+    </section>
+
+</body>
+</html>
