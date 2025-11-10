@@ -1,0 +1,383 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Quality Check — Evaluación de Calidad de Software</title>
+
+  <!-- Tailwind CDN (rápido y listo para GitHub Pages) -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <style>
+    /* Estilos complementarios */
+    .glass {
+      backdrop-filter: blur(6px);
+      background: rgba(255,255,255,0.75);
+    }
+    .accent {
+      background-image: linear-gradient(90deg,#6366f1 0%,#0ea5e9 100%);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+    .card {
+      transition: transform .22s ease, box-shadow .22s ease;
+    }
+    .card:hover { transform: translateY(-6px); box-shadow: 0 20px 40px rgba(2,6,23,0.08); }
+    /* pequeño estilo para el range slider visible */
+    input[type="range"]::-webkit-slider-runnable-track { height:8px; border-radius:999px; background:linear-gradient(90deg,#c7d2fe, #bae6fd); }
+    input[type="range"]::-webkit-slider-thumb { -webkit-appearance:none; width:18px; height:18px; border-radius:50%; background:#fff; border:4px solid #6366f1; margin-top:-5px; box-shadow:0 4px 12px rgba(99,102,241,0.28); }
+  </style>
+</head>
+<body class="bg-gradient-to-b from-slate-50 to-white text-slate-800 antialiased">
+  <header class="max-w-6xl mx-auto px-6 py-6 flex items-center gap-4">
+    <div class="flex items-center gap-3">
+      <div class="w-12 h-12 rounded-xl flex items-center justify-center bg-gradient-to-br from-indigo-500 to-sky-400 text-white font-bold shadow-lg">QC</div>
+      <div>
+        <h1 class="text-2xl font-extrabold leading-tight">Quality Check</h1>
+        <p class="text-sm text-slate-500">Herramienta educativa — Evaluación rápida de calidad de software</p>
+      </div>
+    </div>
+
+    <nav class="ml-auto flex items-center gap-3 text-sm">
+      <a href="#evaluador" class="px-3 py-2 rounded-lg hover:bg-slate-100">Evaluador</a>
+      <a href="#normas" class="px-3 py-2 rounded-lg hover:bg-slate-100">Normas</a>
+      <a href="#guion" class="px-3 py-2 rounded-lg hover:bg-slate-100">Guion</a>
+      <a href="#plantilla" class="px-3 py-2 rounded-lg hover:bg-slate-100">Plantilla APA</a>
+    </nav>
+  </header>
+
+  <main class="max-w-6xl mx-auto px-6 py-6 grid md:grid-cols-3 gap-6">
+    <!-- Columna principal -->
+    <section class="md:col-span-2 space-y-6">
+      <article class="card glass rounded-2xl p-6">
+        <div class="flex items-center justify-between">
+          <div>
+            <h2 class="text-xl font-semibold">¿Qué es la calidad de software?</h2>
+            <p class="text-sm text-slate-600 mt-1">Conjunto de atributos que determinan si un software cumple requisitos funcionales, es mantenible, seguro y usable. En este proyecto aprenderás a medirla con un modelo simple y justificable.</p>
+          </div>
+          <div class="text-right">
+            <div class="text-xs text-slate-500">Modelo simple</div>
+            <div class="text-sm font-semibold">Escala 0–5 (ponderada)</div>
+          </div>
+        </div>
+      </article>
+
+      <article id="normas" class="card rounded-2xl p-6 bg-white shadow-sm">
+        <h3 class="text-lg font-semibold">Normas y estándares relevantes</h3>
+        <ul class="list-disc ml-5 mt-3 text-sm text-slate-700 space-y-1">
+          <li><strong>ISO/IEC 25010</strong> — Modelo de calidad del producto de software (atributos como funcionalidad, usabilidad, fiabilidad).</li>
+          <li><strong>ISO 9001</strong> — Gestión de la calidad (procesos y mejora continua).</li>
+          <li><strong>ISO/IEC 27001</strong> — Seguridad de la información (importante si manejas datos sensibles).</li>
+          <li><strong>IEEE / Buenas prácticas</strong> — Estándares para documentación, pruebas y diseño.</li>
+        </ul>
+      </article>
+
+      <article class="card rounded-2xl p-6 bg-white shadow-sm">
+        <h3 class="text-lg font-semibold">Modelos y métricas sugeridas</h3>
+        <p class="text-sm text-slate-700">Este ejercicio usa un modelo ponderado (fácil de justificar). Puedes adaptarlo a más métricas si tu proyecto lo requiere.</p>
+        <table class="w-full mt-3 text-sm">
+          <thead>
+            <tr class="text-left text-slate-600">
+              <th class="pb-2">Criterio</th>
+              <th class="pb-2">Descripción</th>
+              <th class="pb-2">Ponderación</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="align-top border-t">
+              <td class="py-2 font-medium">Funcionalidad</td>
+              <td class="py-2 text-slate-600">Cumplimiento de requisitos funcionales y casos de uso.</td>
+              <td class="py-2 font-semibold">25%</td>
+            </tr>
+            <tr class="align-top border-t">
+              <td class="py-2 font-medium">Usabilidad</td>
+              <td class="py-2 text-slate-600">Facilidad de uso y aprendizaje.</td>
+              <td class="py-2 font-semibold">20%</td>
+            </tr>
+            <tr class="align-top border-t">
+              <td class="py-2 font-medium">Rendimiento</td>
+              <td class="py-2 text-slate-600">Velocidad, consumo y comportamiento bajo carga.</td>
+              <td class="py-2 font-semibold">20%</td>
+            </tr>
+            <tr class="align-top border-t">
+              <td class="py-2 font-medium">Seguridad</td>
+              <td class="py-2 text-slate-600">Protección de datos y control de accesos.</td>
+              <td class="py-2 font-semibold">20%</td>
+            </tr>
+            <tr class="align-top border-t">
+              <td class="py-2 font-medium">Mantenibilidad</td>
+              <td class="py-2 text-slate-600">Facilidad para corregir y adaptar el software.</td>
+              <td class="py-2 font-semibold">15%</td>
+            </tr>
+          </tbody>
+        </table>
+      </article>
+
+      <article class="card rounded-2xl p-6 bg-white shadow-sm">
+        <h3 class="text-lg font-semibold">Buenas prácticas de entrega</h3>
+        <ol class="list-decimal ml-5 mt-3 text-sm text-slate-700 space-y-1">
+          <li>Portada, resumen y estructura APA.</li>
+          <li>Resultados: tabla de métricas y calificación final con justificación.</li>
+          <li>Anexos: capturas, comandos, scripts, o evidencia de pruebas.</li>
+        </ol>
+      </article>
+
+      <article id="guion" class="card rounded-2xl p-6 bg-white shadow-sm">
+        <h3 class="text-lg font-semibold">Guion sugerido para video (4–5 min)</h3>
+        <div class="text-sm text-slate-700 mt-2 space-y-2">
+          <p><strong>Introducción (30s):</strong> Presentación del equipo y objetivo.</p>
+          <p><strong>Concepto (40s):</strong> Qué es calidad de software y por qué importa.</p>
+          <p><strong>Demostración (60s):</strong> Abrir Quality Check y mostrar la evaluación (mencionar puntuaciones y justificación).</p>
+          <p><strong>Conclusiones (40s):</strong> Recomendaciones y pasos a seguir.</p>
+        </div>
+      </article>
+
+      <article id="plantilla" class="card rounded-2xl p-6 bg-white shadow-sm">
+        <h3 class="text-lg font-semibold">Plantilla breve (estructura APA)</h3>
+        <p class="text-sm text-slate-700 mt-2">Portada, resumen, introducción, marco teórico, metodología, resultados, discusión, conclusiones, recomendaciones, referencias y anexos.</p>
+        <pre class="mt-3 text-xs bg-slate-50 p-3 rounded">Portada
+Título
+Autor(es)
+Institución
+Curso
+Fecha
+
+Resumen (150-250 palabras)
+Palabras clave: ...
+
+1. Introducción
+2. Marco teórico
+3. Metodología
+4. Resultados (tabla de métricas + calificación final)
+5. Discusión
+6. Conclusiones
+7. Referencias (APA)</pre>
+      </article>
+    </section>
+
+    <!-- Columna derecha: Evaluador -->
+    <aside id="evaluador" class="space-y-6">
+      <div class="card rounded-2xl p-6 bg-white shadow-sm">
+        <div class="flex items-start justify-between">
+          <div>
+            <h3 class="text-lg font-semibold">Evaluador interactivo</h3>
+            <p class="text-sm text-slate-600 mt-1">Mueve los sliders (0–5). El resultado final se calcula con las ponderaciones arriba indicadas.</p>
+          </div>
+          <div class="text-right">
+            <div class="text-xs text-slate-500">Puntaje final</div>
+            <div id="finalGrade" class="text-2xl font-extrabold text-slate-800">-</div>
+            <div id="finalLabel" class="text-sm text-slate-500">-</div>
+          </div>
+        </div>
+
+        <div class="mt-4 space-y-4">
+          <!-- Rows for sliders -->
+          <div>
+            <label class="font-medium text-sm">Funcionalidad <span id="val_func" class="text-slate-500 font-semibold ml-2">3.5</span></label>
+            <input id="func" type="range" min="0" max="5" step="0.5" value="3.5" class="w-full mt-2" />
+          </div>
+
+          <div>
+            <label class="font-medium text-sm">Usabilidad <span id="val_usab" class="text-slate-500 font-semibold ml-2">4.0</span></label>
+            <input id="usab" type="range" min="0" max="5" step="0.5" value="4.0" class="w-full mt-2" />
+          </div>
+
+          <div>
+            <label class="font-medium text-sm">Rendimiento <span id="val_rend" class="text-slate-500 font-semibold ml-2">3.5</span></label>
+            <input id="rend" type="range" min="0" max="5" step="0.5" value="3.5" class="w-full mt-2" />
+          </div>
+
+          <div>
+            <label class="font-medium text-sm">Seguridad <span id="val_seg" class="text-slate-500 font-semibold ml-2">3.0</span></label>
+            <input id="seg" type="range" min="0" max="5" step="0.5" value="3.0" class="w-full mt-2" />
+          </div>
+
+          <div>
+            <label class="font-medium text-sm">Mantenibilidad <span id="val_man" class="text-slate-500 font-semibold ml-2">4.0</span></label>
+            <input id="man" type="range" min="0" max="5" step="0.5" value="4.0" class="w-full mt-2" />
+          </div>
+        </div>
+
+        <div class="mt-4 border-t pt-4 text-sm">
+          <div class="flex items-center justify-between">
+            <div>
+              <button id="resetBtn" class="px-3 py-2 rounded-lg bg-slate-50 border">Restablecer</button>
+              <button id="copyBtn" class="px-3 py-2 rounded-lg bg-indigo-600 text-white ml-2">Copiar JSON</button>
+            </div>
+            <div class="text-slate-500">Porcentaje ponderado: <span id="weightedPercent" class="font-semibold">-</span>%</div>
+          </div>
+
+          <div class="mt-3">
+            <label class="font-medium text-sm">Justificación (pega esto en tu documento)</label>
+            <textarea id="justif" rows="3" class="mt-2 w-full p-3 rounded-md border resize-none" placeholder="Escribe una justificación breve de la calificación..."></textarea>
+          </div>
+        </div>
+
+        <div class="mt-3 text-xs text-slate-500">Consejo: en el documento APA incluye la tabla de métricas y la justificación breve para cada criterio.</div>
+      </div>
+
+      <div class="card rounded-2xl p-4 bg-white shadow-sm">
+        <h4 class="text-sm font-semibold">JSON de exportación</h4>
+        <pre id="jsonOut" class="mt-2 text-xs bg-slate-50 p-2 rounded h-44 overflow-auto">{ }</pre>
+      </div>
+
+      <div class="card rounded-2xl p-4 bg-white shadow-sm text-sm text-slate-600">
+        <strong>Publicar en GitHub Pages</strong>
+        <ol class="list-decimal ml-5 mt-2 space-y-1">
+          <li>Guarda este archivo como <code>index.html</code>.</li>
+          <li>Súbelo al repo público (Upload files).</li>
+          <li>En Settings → Pages elige Branch: <code>main</code> / Root → Save.</li>
+          <li>La URL será <code>https://TU-USUARIO.github.io/NOMBRE-REPO/</code></li>
+        </ol>
+      </div>
+    </aside>
+  </main>
+
+  <footer class="max-w-6xl mx-auto px-6 py-6 text-center text-sm text-slate-500">
+    © Quality Check — Plantilla educativa · Adáptala y añade evidencia en anexos
+  </footer>
+
+  <script>
+    // Pesos (sum = 100)
+    const weights = {
+      funcionalidad: 25,
+      usabilidad: 20,
+      rendimiento: 20,
+      seguridad: 20,
+      mantenibilidad: 15
+    };
+
+    // Elementos
+    const el = {
+      func: document.getElementById('func'),
+      usab: document.getElementById('usab'),
+      rend: document.getElementById('rend'),
+      seg:  document.getElementById('seg'),
+      man:  document.getElementById('man'),
+      val_func: document.getElementById('val_func'),
+      val_usab: document.getElementById('val_usab'),
+      val_rend: document.getElementById('val_rend'),
+      val_seg:  document.getElementById('val_seg'),
+      val_man:  document.getElementById('val_man'),
+      weightedPercent: document.getElementById('weightedPercent'),
+      finalGrade: document.getElementById('finalGrade'),
+      finalLabel: document.getElementById('finalLabel'),
+      jsonOut: document.getElementById('jsonOut'),
+      justif: document.getElementById('justif'),
+      copyBtn: document.getElementById('copyBtn'),
+      resetBtn: document.getElementById('resetBtn')
+    };
+
+    // Helper: round to 2 decimals
+    function round2(x){ return Math.round((x + Number.EPSILON) * 100) / 100; }
+
+    // Initial display
+    function updateValueDisplays() {
+      el.val_func.textContent = Number(el.func.value).toFixed(1);
+      el.val_usab.textContent = Number(el.usab.value).toFixed(1);
+      el.val_rend.textContent = Number(el.rend.value).toFixed(1);
+      el.val_seg.textContent  = Number(el.seg.value).toFixed(1);
+      el.val_man.textContent  = Number(el.man.value).toFixed(1);
+    }
+
+    // Calcular la nota:
+    // 1) Convertir cada valor (0-5) a porcentaje relativo (0-100): multiply by 20
+    // 2) Aplicar peso%: weighted sum = sum( metric_pct * weight ) / totalWeight
+    //    Since weights sum 100, we compute weightedPercent = sum(metric_pct * weight) / 100
+    // 3) Mappear weightedPercent (0-100) a escala 0-5: grade = (weightedPercent / 100) * 5
+    function recalc() {
+      // paso 1: valores 0-5 -> 0-100
+      const v_func = Number(el.func.value) * 20; // por ejemplo 4.0 -> 80
+      const v_usab = Number(el.usab.value) * 20;
+      const v_rend = Number(el.rend.value) * 20;
+      const v_seg  = Number(el.seg.value)  * 20;
+      const v_man  = Number(el.man.value)  * 20;
+
+      // paso 2: aplicar pesos (cada peso es %)
+      // weightedPercent = (v_func*25 + v_usab*20 + v_rend*20 + v_seg*20 + v_man*15) / 100
+      const sumProducts = (v_func * weights.funcionalidad)
+                        + (v_usab * weights.usabilidad)
+                        + (v_rend * weights.rendimiento)
+                        + (v_seg  * weights.seguridad)
+                        + (v_man  * weights.mantenibilidad);
+
+      const weightedPercent = round2(sumProducts / 100); // 0-100
+      // paso 3: map 0-100 -> 0-5
+      const grade = round2((weightedPercent / 100) * 5);
+
+      // labels interpretativos
+      let label = '';
+      if (grade >= 4.5) label = 'Excelente';
+      else if (grade >= 4.0) label = 'Muy bueno';
+      else if (grade >= 3.0) label = 'Aceptable';
+      else if (grade >= 2.0) label = 'Insuficiente';
+      else label = 'Deficiente';
+
+      // actualizar UI
+      el.weightedPercent.textContent = weightedPercent;
+      el.finalGrade.textContent = grade.toFixed(2);
+      el.finalLabel.textContent = label;
+
+      // preparar JSON
+      const out = {
+        timestamp: new Date().toISOString(),
+        metrics_raw_0_5: {
+          funcionalidad: Number(el.func.value),
+          usabilidad: Number(el.usab.value),
+          rendimiento: Number(el.rend.value),
+          seguridad: Number(el.seg.value),
+          mantenibilidad: Number(el.man.value)
+        },
+        metrics_pct_0_100: {
+          funcionalidad: round2(v_func),
+          usabilidad: round2(v_usab),
+          rendimiento: round2(v_rend),
+          seguridad: round2(v_seg),
+          mantenibilidad: round2(v_man)
+        },
+        weights: weights,
+        weightedPercent: weightedPercent,
+        finalGrade_0_5: grade,
+        interpretation: label,
+        justification: el.justif.value || ''
+      };
+      el.jsonOut.textContent = JSON.stringify(out, null, 2);
+    }
+
+    // Event listeners
+    ['input','change'].forEach(evt => {
+      el.func.addEventListener(evt, () => { updateValueDisplays(); recalc(); });
+      el.usab.addEventListener(evt, () => { updateValueDisplays(); recalc(); });
+      el.rend.addEventListener(evt, () => { updateValueDisplays(); recalc(); });
+      el.seg.addEventListener(evt,  () => { updateValueDisplays(); recalc(); });
+      el.man.addEventListener(evt,  () => { updateValueDisplays(); recalc(); });
+      el.justif.addEventListener('input', recalc);
+    });
+
+    el.copyBtn.addEventListener('click', async () => {
+      try {
+        await navigator.clipboard.writeText(el.jsonOut.textContent);
+        alert('JSON copiado al portapapeles. Pégalo en tu documento APA o en tu entrega.');
+      } catch (e) {
+        alert('No se pudo copiar automáticamente. Selecciona el texto y copia manualmente.');
+      }
+    });
+
+    el.resetBtn.addEventListener('click', () => {
+      el.func.value = 3.5;
+      el.usab.value = 4.0;
+      el.rend.value = 3.5;
+      el.seg.value  = 3.0;
+      el.man.value  = 4.0;
+      el.justif.value = '';
+      updateValueDisplays();
+      recalc();
+    });
+
+    // Inicializar
+    updateValueDisplays();
+    recalc();
+  </script>
+</body>
+</html>
